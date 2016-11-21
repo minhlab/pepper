@@ -1,0 +1,15 @@
+topic: ~i_m_bored()
+language: enu
+
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+# Replying to speech
+#u:(~hello) ~hello
+
+u:(I'm bored) Would you like to go out?
+    u1:(Yes {that's a good idea}) Would you like to go shopping in De Bijenkorf?
+        u2:(Yes) Great! I will call an Uber for you. $bijenkorfSelected = 1

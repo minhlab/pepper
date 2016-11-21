@@ -1,0 +1,34 @@
+topic: ~Call_list()
+language: enu
+
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+# Replying to speech
+#u:(~hello) ~hello
+
+concept:(yes) [yes "all right" sure "why not" ok certainly "very well" yep yea definitely amen]
+concept:(no) [no nope "don't want" "no way" never "not at all"]
+concept:(how) ["how are you" howdy "what's up" "how do you feel"]
+concept:(happy) [ok fine great happy blessed "all right" glad "not bad"]
+concept:(sad) [sad miserable bad unhappy tired]
+concept:(repeat) [repeat understand]
+concept:(thx) ["thank you" thanks gracias "much obliged" merci]
+concept:(hello) [hello hi hey "good morning" greetings]
+concept:(bye) [bye goodbye "bye bye" "tata" "see you" adios cheerio "so long" farewell "have a nice day"]
+
+u:(e:onStart) You seems to be bored. May I suggest you something?
+    u1:(~yes) Okay. How about I connect you with your relatives?
+        u2:(~yes) Okay. Who would you like to call? 
+            u3:(husband) Okay. I will dial him. $call_husband = 1
+            u3:(son) Okay. I will give him a call. $call_son = 1
+            u3:(daughter) Sure. I will ring her. $call_daughter = 1
+        u2:(~no)  Would you like to meet somebody in the neigborhood instead? 
+            u3: (~yes) $next_box = 1
+            u3: (~no) Okay. I give up. $no_call_neighborhood=1
+    u1:(~no) Okay. Please let me know if you need any help. 
+    
+        

@@ -1,0 +1,18 @@
+topic: ~i_forgot_a_word()
+language: enu
+
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+u:("I forgot a word") Could you describe it?
+    u1: ({Yes} {"It's"} porcelain) It's porcelain. Could you tell me more?
+        u2: ({Yes} {And} {"It's"} round) It's round. Could you tell me more?
+            u3: ({Yes} {And} {"It's"} wide) I know it, it's a plate. $plateSelected = 1
+    u1: ({Yes} {"It's"} wood) It's wood. Could you tell me more?
+        u2: ({Yes} {And} I can sit on it) Sounds like a chair. $chairSelected = 1
+            u3: ({And} It rocks {back and forth}) Yes, it's a rocking chair. $rockerSelected = 1
+
+# Replying to speech
+#u:(~hello) ~hello

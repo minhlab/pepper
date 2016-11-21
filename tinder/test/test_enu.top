@@ -1,0 +1,18 @@
+topic: ~test()
+language: enu
+
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+# Replying to speech
+#u:(~hello) ~hello
+
+u:(e:onStart) Would you like a cup of coffee?
+    u1:(yes) ok, nice
+    u1:([no not] {please}) oh. $noselected = 1
+    
+u:(hello) hello there!
+    

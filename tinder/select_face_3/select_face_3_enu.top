@@ -1,0 +1,15 @@
+topic: ~select_face_3()
+language: enu
+
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+# Replying to speech
+#u:(~hello) ~hello
+
+u:(e:onStart) He lives 5km away from here. Would you like to meet him?
+    u1:(yes) ok, nice. I will send him a message. $yesselected = 1
+    u1:(no) oh okay. Please wait for a few hours for me to find more persons. $noselected = 1
